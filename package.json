@@ -1,0 +1,18 @@
+{
+  "name": "webp-ondemand",
+  "version": "1.0.0",
+  "description": "On-Demand Conversion to WebP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "author": "Volodymyr Kolesnykov <volodymyr@wildwolf.name>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "sharp": "^0.22.1"
+  },
+  "devDependencies": {
+    "semistandard": "^13.0.1"
+  }
+}
