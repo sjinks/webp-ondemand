@@ -1,6 +1,6 @@
 {
   "name": "webp-ondemand",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "On-Demand Conversion to WebP",
   "main": "index.js",
   "scripts": {
@@ -14,5 +14,18 @@
   },
   "devDependencies": {
     "semistandard": "^13.0.1"
-  }
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjinks/webp-ondemand.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/sjinks/webp-ondemand/issues"
+  },
+  "homepage": "https://github.com/sjinks/webp-ondemand#readme"
 }
