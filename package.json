@@ -9,11 +9,11 @@
   "author": "Volodymyr Kolesnykov <volodymyr@wildwolf.name>",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.0.0",
-    "sharp": "^0.22.1"
+    "dotenv": "^8.1.0",
+    "sharp": "^0.23"
   },
   "devDependencies": {
-    "semistandard": "^13.0.1"
+    "semistandard": "^14.0.1"
   },
   "directories": {
     "example": "examples",
