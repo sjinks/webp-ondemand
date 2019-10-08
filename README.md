@@ -37,7 +37,7 @@ The server expects a path to the real filename with `.webp` extension appended. 
 as WebP, the server should be given `https://example.com/image.png.webp` URL.
 
 The application parses the URL: the domain part (`example.com` is this case) is used to find the document root (base path).
-The path part ('/image.png.webp') is then appended to the document root, and `.webp` extension is removed.
+The path part (`/image.png.webp`) is then appended to the document root, and `.webp` extension is removed.
 
 For `HOSTMAP=example.com:/var/www/example.com` and `https://example.com/image.png.webp` the path will be `/var/www/example.com/image.png`.
 
@@ -68,7 +68,7 @@ Otherwise, if there are no client hints specified, the application will not try 
 
 The application then reads the source image and, if necessary, resizes it according to client hints.
 If any dimension of the resized image is greather than 16383px (maximum allowed length of a WebP image),
-the images is *not* converted to WebP and served in the original format (there are [exceptions](https://sharp.dimens.io/en/stable/api-output/#tobuffer): GIF and SVG gets converted to PNG
+the images is *not* converted to WebP and served in the original format (there are [exceptions](http://sharp.pixelplumbing.com/en/stable/api-output/#tobuffer): GIF and SVG gets converted to PNG
 due to limitations of the used image processing library).
 
 If the request method is HEAD, the application sends only response headers. If the request method is GET,
@@ -76,22 +76,22 @@ the application sends both headers and the image.
 
 The application sends the following headers:
 
-  * Cache-Control: public, max-age and s-max-age correspond to `MAX_AGE` value form `.env`
-  * Content-Length: size of the image in bytes
-  * Content-Type: usually image/webp, but may vary if width or height of the image is greater than 16383px
+  * `Cache-Control: public`, `max-age` and `s-max-age` correspond to `MAX_AGE` value form `.env`
+  * `Content-Length`: size of the image in bytes
+  * `Content-Type`: usually `image/webp`, but may vary if width or height of the image is greater than 16383px
 
 If content negotiation is eanbled (`CONTENT_NEGOTIATION` in `.env`), then the following headers are sent:
 
   * `Accept-CH: Width, Viewport-Width, DPR, RTT, ECT, Downlink`
   * `Vary: Width, DPR, Save-Data, RTT, ECT, Downlink, Viewport-Width`
-  * `Content-DPR` if there was `Width` header in the request
+  * `Content-DPR` if there is `Width` header in the request
   * `Accept-CH-Lifetime` if `ACH_LIFETIME` in `.env` is non-zero
 
 ## webp-ondemand and nginx
 
 It makes sense to cache generated .webp files. A web server is the best place for that :-)
 
-If you use `nginx`, you can adapt this sample configuration to your needs:
+If you use `nginx`, you can adapt this sample configuration to suit your needs:
 
 ```nginx
 proxy_cache_path /var/lib/nginx/webp levels=2 use_temp_path=off keys_zone=webpimg:20m max_size=1024m inactive=48h;
