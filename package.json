@@ -10,10 +10,10 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.1.0",
-    "sharp": "^0.23"
+    "sharp": "^0.23.1"
   },
   "devDependencies": {
-    "semistandard": "^14.0.1"
+    "semistandard": "^14.2.0"
   },
   "directories": {
     "example": "examples",
