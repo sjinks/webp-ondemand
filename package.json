@@ -10,11 +10,11 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "sharp": "^0.25.4"
+    "sharp": "^0.26.0"
   },
   "devDependencies": {
     "eslint-config-standard": "^13.0.1",
-    "semistandard": "^14.2.2"
+    "semistandard": "^14.2.3"
   },
   "directories": {
     "example": "examples",
